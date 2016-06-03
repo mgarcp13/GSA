@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -46,12 +47,14 @@ public class Administracion extends AppCompatActivity {
 
         for(int i=0; i<listaFilas.size(); i++){
             fila = listaFilas.get(i);
+            fila.setClickable(true);
             fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    v.setBackgroundColor(Color.GRAY);
-
-                    Log.i("Evento", "Fila seleccionada");
+                    v.setBackgroundColor(Color.RED);
+                    TextView sample = (TextView) fila.getChildAt(0);
+                    String result = sample.getText().toString();
+                    Log.i("Evento", result);
                 }
             });
 
