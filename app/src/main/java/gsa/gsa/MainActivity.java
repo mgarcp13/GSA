@@ -1,52 +1,73 @@
 package gsa.gsa;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import gsa.database.GSADataSource;
 import gsa.database.GSADatabase;
+import gsa.database.GSAQuerys;
 import gsa.database.GSAReaderDbHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText et_nombre, et_password;
+    private String nombre, password;
+    private Button login;
+    private SQLiteDatabase db;
+    private int acceso;
+
+    private final int ADMINISTRADOR = 0;
+    private final int GESTOR = 1;
+
     Button btnLogin;
     Button btnRegistro;
-    GSADatabase db;
+    GSADatabase database;
     Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GSAReaderDbHelper database = new GSAReaderDbHelper(this);
-        //this.db = new GSADatabase(database.getReadableDatabase());
-        setContentView(R.layout.activity_main);
+        //this.database = new GSADatabase(database.getReadableDatabase());
+        setContentView(R.layout.activity_login);
 
-        btnLogin = (Button) findViewById(R.id.BtnLogin);
-        btnRegistro = (Button) findViewById(R.id.BtnRegistro);
+        //crear referencias a los campos de texto de Nombre y Contraseña
+        et_nombre = (EditText) findViewById(R.id.et_usuario);
+        et_password = (EditText) findViewById(R.id.et_password);
+        login = (Button) findViewById(R.id.btn_login);
 
-        // Evento al pulsar el boton login
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+        //evento al pulsar el boton del login
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(MainActivity.this, Login.class);
-                //intent.putExtra("DATABASE", db);
-                startActivity(intent);
-            }
-        });
+                //obtener el nombre y la contraseña
+                nombre = et_nombre.getText().toString();
+                password = et_password.getText().toString();
 
-        // Evento al pulsar el boton registro
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                GSAQuerys query = new GSAQuerys(getApplicationContext());
+                acceso = query.checkLogin(nombre, password);
 
+                //se definen los distintos tipos de accesos
+                if (acceso == ADMINISTRADOR) {
+                    intent = new Intent(MainActivity.this, Administracion.class);
+                    startActivity(intent);
+                }
+
+                //proceso de autenticacion
+                else if (acceso == GESTOR) {
+                    intent = new Intent(MainActivity.this, GestionClientes.class);
+                    startActivity(intent);
+
+                } else {
+                    TextView control = (TextView) findViewById(R.id.control);
+                    control.setText("Error de autenticación");
+                }
             }
         });
 

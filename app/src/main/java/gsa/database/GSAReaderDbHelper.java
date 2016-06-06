@@ -23,12 +23,13 @@ public class GSAReaderDbHelper extends SQLiteOpenHelper {
         db.execSQL(GSADataSource.CREATE_CLIENTES_SCRIPT);
         //Crear la tabla Usuarios
         db.execSQL(GSADataSource.CREATE_USUARIOS_SCRIPT);
-        //Crear la tabla UsuariosSistema
+        //Crear la tabla AgregarUsuariosSistemaActivity
         db.execSQL(GSADataSource.CREATE_USUARIOSSISTEMA_SCRIPT);
         //Crear la tabla Trabajadores
         db.execSQL(GSADataSource.CREATE_TRABAJADORES_SCRIPT);
         //Insertar registros iniciales
         db.execSQL(GSADataSource.INSERT_DEFAULTSISTEMUSER_SCRIPT);
+        db.execSQL(GSADataSource.INSERT_DEFAULTSISTEMUSER2_SCRIPT);
     }
 
     @Override

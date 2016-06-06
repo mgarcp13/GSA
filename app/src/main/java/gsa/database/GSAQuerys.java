@@ -62,4 +62,28 @@ public class GSAQuerys extends GSAReaderDbHelper{
         }
         return elementos;
     }
+
+    public void editarUsuarioSistema(String usuario, String password, int acceso, int id) {
+        database = getWritableDatabase();
+
+        database.execSQL("UPDATE USUARIOSSISTEMA SET NOMBRE=" + usuario
+                + ", PASSWORD=" + password + ", ACCESO=" + acceso + "WHERE ID=" + id + "", null);
+    }
+
+    public int getUsuarioSistemaID(String usuario, String password, int acceso) {
+        database = getReadableDatabase();
+        int id = -1;
+        Cursor c = database.rawQuery("SELECT ID FROM USUARIOSSISTEMA WHERE (NOMBRE = '" + usuario + "')"
+                + " AND (PASSWORD = '" + password +"') AND (ACCESO = '" + acceso + "')", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                id = c.getInt(0);
+            }
+            while(c.moveToNext());
+        }
+
+        return id;
+    }
 }

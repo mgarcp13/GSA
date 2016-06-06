@@ -22,4 +22,8 @@
     <color name="negro">#000000</color>
     <color name="marfil">#FFFFF0</color>
     <color name="dorado">#EEE8AA</color>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="primaryColor">#346D7D</color>
+    <color name="primaryDarkColor">#1F515F</color>
+    <color name="accentColor">#03A9F4</color>
 </resources>

@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -39,12 +39,16 @@
             android:label="@string/title_activity_administracion"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UsuariosSistema"
+            android:name=".AgregarUsuariosSistemaActivity"
             android:label="@string/title_activity_usuarios_sistema"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Gestion"
             android:label="@string/title_activity_gestion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GestionClientes"
+            android:label="@string/title_activity_gestion_clientes"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

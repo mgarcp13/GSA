@@ -22,7 +22,7 @@ public class GSADataSource {
     public static final String STRING_TYPE = "text";
     public static final String INT_TYPE = "integer";
 
-    //Campos de la tabla UsuariosSistema
+    //Campos de la tabla AgregarUsuariosSistemaActivity
     public static class ColumnUsuariosSistema {
         public static final String ID_USU = BaseColumns._ID;
         public static final String NOMBRE = "Nombre";
@@ -108,7 +108,7 @@ public class GSADataSource {
                     ColumnTrabajadores.ESPECIALIDAD +" "+INT_TYPE+" not null) ";
 
 
-    //Script de Creación de la tabla UsuariosSistema
+    //Script de Creación de la tabla AgregarUsuariosSistemaActivity
     public static final String CREATE_USUARIOSSISTEMA_SCRIPT =
             "create table "+ NAME_TABLE_USUARIOSSISTEMA +"(" +
                     ColumnUsuariosSistema.ID_USU +" "+INT_TYPE+" primary key autoincrement," +
@@ -152,6 +152,10 @@ public class GSADataSource {
     //Scripts de inserción por defecto
     public static final String INSERT_DEFAULTSISTEMUSER_SCRIPT = "insert into " + NAME_TABLE_USUARIOSSISTEMA +
             "(NOMBRE, PASSWORD, ACCESO) values('admin','12345',0);";
+
+    public static final String INSERT_DEFAULTSISTEMUSER2_SCRIPT = "insert into " + NAME_TABLE_USUARIOSSISTEMA +
+            "(NOMBRE, PASSWORD, ACCESO) values('gestor','12345',1);";
+
     /*public static final String INSERT_QUOTES_SCRIPT =
             "insert into "+ NAME_TABLE_CLIENTES +" values(" +
                     "null," +

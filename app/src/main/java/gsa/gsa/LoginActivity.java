@@ -13,7 +13,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import gsa.database.GSAQuerys;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText et_nombre, et_password;
     private String nombre, password;
@@ -40,6 +40,7 @@ public class Login extends AppCompatActivity {
         et_password = (EditText) findViewById(R.id.et_password);
         login = (Button) findViewById(R.id.btn_login);
 
+        //this.database = getIntent().getParcelableExtra("DATABASE");
 
         //evento al pulsar el boton del login
         login.setOnClickListener(new View.OnClickListener() {
@@ -54,13 +55,13 @@ public class Login extends AppCompatActivity {
 
                 //se definen los distintos tipos de accesos
                 if (acceso == ADMINISTRADOR) {
-                    intent = new Intent(Login.this, Administracion.class);
+                    intent = new Intent(LoginActivity.this, Administracion.class);
                     startActivity(intent);
                 }
 
                 //proceso de autenticacion
                 else if (acceso == GESTOR) {
-                    /*intent = new Intent(Login.this, Gestion.class);
+                    /*intent = new Intent(LoginActivity.this, Gestion.class);
                     startActivity(intent);*/
                     TextView control = (TextView) findViewById(R.id.control);
                     control.setText("Autenticado como Gestor");

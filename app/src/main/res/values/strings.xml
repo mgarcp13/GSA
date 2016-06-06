@@ -6,4 +6,9 @@
     <string name="title_activity_administracion">Administracion</string>
     <string name="title_activity_usuarios_sistema">UsuariosSistema</string>
     <string name="title_activity_gestion">Gestion</string>
+    <string name="title_activity_gestion_clientes">GestionClientes</string>
+    <string name="clientes">Clientes</string>
+    <string name="trabajadores_item">Trabajadores</string>
+    <string name="servicios_item">Servicios</string>
+    <string name="facturas_item">Facturas</string>
 </resources>
