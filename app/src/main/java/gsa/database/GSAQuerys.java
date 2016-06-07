@@ -36,6 +36,14 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return acceso;
     }
 
+    public void addCliente(String nombre, String apellidos, String dni, String dir, String poblacion,
+                           String provincia, String cpostal, String email, String telefono) {
+        database = getWritableDatabase();
+        database.execSQL("INSERT INTO CLIENTES (NOMBRE, APELLIDOS, DNI, DIRECCION, POBLACION, PROVINCIA, CODPOSTAL, " +
+                "EMAIL, TELEFONO) VALUES ('" + nombre + "', '" + apellidos + "', '" + dni + "', '" + dir + "', '" +
+                poblacion + "', '" + provincia + "', '" + cpostal + "', '" + email + "', '" + telefono + "');");
+    }
+
     public void addUsuarioSistema(String usuario, String password, int acceso){
         database = getWritableDatabase();
         database.execSQL("INSERT INTO USUARIOSSISTEMA (NOMBRE, PASSWORD, ACCESO) VALUES ('" +
@@ -63,6 +71,16 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return elementos;
     }
 
+    public void editarCliente(String nombre, String apellidos, String dni, String dir, String poblacion,
+                              String provincia, String cpostal, String email, String telefono, int id) {
+        database = getWritableDatabase();
+
+        database.execSQL("UPDATE USUARIOSSISTEMA SET NOMBRE=" + nombre + ", APELLIDOS=" + apellidos +
+                ", DNI=" + dni + ", DIRECCION=" + dir + ", POBLACION=" + poblacion +
+                ", PROVINCIA=" + provincia + ", CODPOSTAL=" + cpostal + ", EMAIL=" + email + ", TELEFONO=" + telefono +
+                "WHERE ID=" + id + "", null);
+    }
+
     public void editarUsuarioSistema(String usuario, String password, int acceso, int id) {
         database = getWritableDatabase();
 
@@ -86,4 +104,42 @@ public class GSAQuerys extends GSAReaderDbHelper{
 
         return id;
     }
+
+    public int getClienteID(String dni) {
+        database = getReadableDatabase();
+        int id = -1;
+        Cursor c = database.rawQuery("SELECT ID FROM CLIENTES WHERE (DNI = '" + dni + "')" , null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                id = c.getInt(0);
+            }
+            while(c.moveToNext());
+        }
+
+        return id;
+    }
+
+    public ArrayList<String> getClientes(){
+        database = getReadableDatabase();
+        int campos = 3;
+        ArrayList<String> elementos = new ArrayList<>();
+        //String[] entrada = new String[campos];
+
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, EMAIL FROM CLIENTES", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<campos; i++){
+                    elementos.add(c.getString(i));
+                }
+
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
 }

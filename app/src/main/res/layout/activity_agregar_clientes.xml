@@ -1,35 +1,193 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="gsa.gsa.AgregarClientes">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <TextView
+            android:id="@+id/tv_nombre_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="Nombre"
+            android:layout_marginTop="15dp"
+            android:layout_alignTop="@+id/et_nombre_cliente"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp" />
 
-    </android.support.design.widget.AppBarLayout>
+        <EditText
+            android:id="@+id/et_nombre_cliente"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:layout_marginTop="5dip"
+            android:layout_alignLeft="@+id/tv_nombre_cliente"
+            android:layout_marginLeft="120dp"/>
 
-    <include layout="@layout/content_agregar_clientes"/>
+        <TextView
+            android:id="@+id/tv_apellidos_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellidos"
+            android:textSize="10pt"
+            android:layout_below="@id/et_nombre_cliente"
+            android:layout_alignBottom="@+id/et_apellidos_cliente"
+            android:layout_alignTop="@+id/et_apellidos_cliente"
+            android:layout_alignLeft="@+id/tv_nombre_cliente"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        <EditText
+            android:id="@+id/et_apellidos_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_cliente"
+            android:layout_below="@+id/et_nombre_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
 
-</android.support.design.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/tv_dni_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:textSize="10pt"
+            android:layout_alignBottom="@+id/et_dni_cliente"
+            android:layout_alignTop="@+id/et_dni_cliente"
+            android:layout_alignLeft="@+id/tv_nombre_cliente"/>
+
+        <EditText
+            android:id="@+id/et_dni_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_apellidos_cliente"
+            android:layout_below="@+id/et_apellidos_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_dir_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dni_cliente"
+            android:layout_alignLeft="@+id/tv_dni_cliente"
+            android:layout_alignTop="@+id/et_dir_cliente"
+            android:layout_alignBottom="@+id/et_dir_cliente"
+            android:textSize="10pt"
+            android:text="Direccion"/>
+
+        <EditText
+            android:id="@+id/et_dir_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_dni_cliente"
+            android:layout_below="@+id/et_dni_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_poblacion_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dir_cliente"
+            android:layout_alignLeft="@+id/tv_dir_cliente"
+            android:layout_alignTop="@+id/et_poblacion_cliente"
+            android:layout_alignBottom="@+id/et_poblacion_cliente"
+            android:textSize="10pt"
+            android:text="Poblacion"/>
+
+        <EditText
+            android:id="@+id/et_poblacion_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_dir_cliente"
+            android:layout_below="@+id/et_dir_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_provincia_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dir_cliente"
+            android:layout_alignLeft="@+id/tv_dir_cliente"
+            android:layout_alignTop="@+id/et_provincia_cliente"
+            android:layout_alignBottom="@+id/et_provincia_cliente"
+            android:textSize="10pt"
+            android:text="Provincia"/>
+
+        <EditText
+            android:id="@+id/et_provincia_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_poblacion_cliente"
+            android:layout_below="@+id/et_poblacion_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_cpostal_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_provincia_cliente"
+            android:layout_alignLeft="@+id/tv_provincia_cliente"
+            android:layout_alignTop="@+id/et_cpostal_cliente"
+            android:layout_alignBottom="@+id/et_cpostal_cliente"
+            android:textSize="10pt"
+            android:text="C. Postal"/>
+
+        <EditText
+            android:id="@+id/et_cpostal_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_cliente"
+            android:layout_below="@+id/et_provincia_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_email_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cpostal_cliente"
+            android:layout_alignLeft="@+id/tv_dir_cliente"
+            android:layout_alignTop="@+id/et_email_cliente"
+            android:layout_alignBottom="@+id/et_email_cliente"
+            android:textSize="10pt"
+            android:text="Email"/>
+
+        <EditText
+            android:id="@+id/et_email_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_dir_cliente"
+            android:layout_below="@+id/et_cpostal_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <TextView
+            android:id="@+id/tv_telefono_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_email_cliente"
+            android:layout_alignLeft="@+id/tv_email_cliente"
+            android:layout_alignTop="@+id/et_telefono_cliente"
+            android:layout_alignBottom="@+id/et_telefono_cliente"
+            android:textSize="10pt"
+            android:text="Telefono"/>
+
+        <EditText
+            android:id="@+id/et_telefono_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_dir_cliente"
+            android:layout_below="@+id/et_email_cliente"
+            android:layout_alignRight="@id/et_nombre_cliente" />
+
+        <Button
+            android:id="@+id/btn_agregar_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR"
+            android:layout_below="@+id/tv_email_cliente"
+            android:layout_alignLeft="@+id/tv_telefono_cliente"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -55,16 +55,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 //se definen los distintos tipos de accesos
                 if (acceso == ADMINISTRADOR) {
-                    intent = new Intent(LoginActivity.this, Administracion.class);
+                    intent = new Intent(LoginActivity.this, Clientes.class);
                     startActivity(intent);
                 }
 
-                //proceso de autenticacion
+
                 else if (acceso == GESTOR) {
-                    /*intent = new Intent(LoginActivity.this, Gestion.class);
+                    /*intent = new Intent(LoginActivity.this, Clientes.class);
                     startActivity(intent);*/
                     TextView control = (TextView) findViewById(R.id.control);
                     control.setText("Autenticado como Gestor");
+
                 } else {
                     TextView control = (TextView) findViewById(R.id.control);
                     control.setText("Error de autenticación");

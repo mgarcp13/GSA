@@ -1,3 +1,4 @@
+
 <android.support.v7.widget.RecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/reciclador"
@@ -7,4 +8,5 @@
     android:scrollbars="vertical">
 
 </android.support.v7.widget.RecyclerView>
+
 

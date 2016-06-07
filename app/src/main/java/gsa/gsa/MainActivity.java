@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //proceso de autenticacion
                 else if (acceso == GESTOR) {
-                    intent = new Intent(MainActivity.this, GestionClientes.class);
+                    intent = new Intent(MainActivity.this, Clientes.class);
                     startActivity(intent);
 
                 } else {

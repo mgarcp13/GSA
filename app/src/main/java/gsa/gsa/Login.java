@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
 
                 //proceso de autenticacion
                 else if (acceso == GESTOR) {
-                    /*intent = new Intent(Login.this, Gestion.class);
+                    /*intent = new Intent(Login.this, Clientes.class);
                     startActivity(intent);*/
                     TextView control = (TextView) findViewById(R.id.control);
                     control.setText("Autenticado como Gestor");

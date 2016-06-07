@@ -32,6 +32,7 @@ public class GSADataSource {
 
     public static class ColumnClientes {
         public static final String ID_CLIENTE = BaseColumns._ID;
+        public static final String ID_SERVICIO = "IDServicio";
         public static final String NOMBRE = "Nombre";
         public static final String APELLIDOS = "Apellidos";
         public static final String DNI = "DNI";
@@ -138,16 +139,17 @@ public class GSADataSource {
     public static final String CREATE_CLIENTES_SCRIPT =
             "create table "+ NAME_TABLE_CLIENTES +"(" +
                     ColumnClientes.ID_CLIENTE +" "+INT_TYPE+" primary key autoincrement," +
+                    ColumnClientes.ID_SERVICIO +" "+INT_TYPE+" null," +
                     ColumnClientes.NOMBRE +" "+STRING_TYPE+" not null, " +
                     ColumnClientes.APELLIDOS +" "+STRING_TYPE+" not null, " +
                     ColumnClientes.DNI +" "+STRING_TYPE+" not null, "+
-                    ColumnClientes.NUMCUENTA +" "+STRING_TYPE+" not null," +
+                    ColumnClientes.NUMCUENTA +" "+STRING_TYPE+" null," +
                     ColumnClientes.DIRECCION +" "+STRING_TYPE+" not null, "+
                     ColumnClientes.POBLACION +" "+STRING_TYPE+" not null," +
                     ColumnClientes.PROVINCIA +" "+STRING_TYPE+" not null, "+
-                    ColumnClientes.CODPOSTAL +" "+INT_TYPE+" not null, " +
+                    ColumnClientes.CODPOSTAL +" "+STRING_TYPE+" not null, " +
                     ColumnClientes.EMAIL +" "+STRING_TYPE+" not null, "+
-                    ColumnClientes.TELEFONO +" "+INT_TYPE+" not null)";
+                    ColumnClientes.TELEFONO +" "+STRING_TYPE+" not null)";
 
     //Scripts de inserción por defecto
     public static final String INSERT_DEFAULTSISTEMUSER_SCRIPT = "insert into " + NAME_TABLE_USUARIOSSISTEMA +
