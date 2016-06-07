@@ -1,5 +1,7 @@
 package gsa.Interfaz;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import gsa.database.GSAQuerys;
+import gsa.gsa.Cliente;
 import gsa.gsa.R;
 import gsa.gsa.UsuariosSistema;
 
@@ -20,7 +24,9 @@ public class AdministracionAdapter extends RecyclerView.Adapter<AdministracionAd
     private View.OnClickListener listener;
     private List<UsuariosSistema> items;
 
+
     public static class AdministracionViewHolder extends RecyclerView.ViewHolder {
+        public final View a;
         // Campos respectivos de un item
         public TextView usuario;
         public TextView password;
@@ -28,6 +34,7 @@ public class AdministracionAdapter extends RecyclerView.Adapter<AdministracionAd
 
         public AdministracionViewHolder(View v) {
             super(v);
+            this.a = v;
             usuario = (TextView) v.findViewById(R.id.usuario);
             password = (TextView) v.findViewById(R.id.password);
             acceso = (TextView) v.findViewById(R.id.acceso);
@@ -49,6 +56,7 @@ public class AdministracionAdapter extends RecyclerView.Adapter<AdministracionAd
     public AdministracionViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.administracion_card, viewGroup, false);
+        v.setOnClickListener(this);
         return new AdministracionViewHolder(v);
     }
 
@@ -67,6 +75,18 @@ public class AdministracionAdapter extends RecyclerView.Adapter<AdministracionAd
     public void onClick(View view){
         if(listener != null)
             listener.onClick(view);
+    }
+
+    public void remove(int position, Context c) {
+        UsuariosSistema usuariosSistema = (UsuariosSistema) this.items.get(position);
+        String usuario = usuariosSistema.getUsuario().toString();
+        String password = usuariosSistema.getPassword().toString();
+        String acceso = usuariosSistema.getAcceso().toString();
+        GSAQuerys query = new GSAQuerys(c);
+        int id = query.getUsuarioSistemaID(usuario, password, Integer.parseInt(acceso));
+        query.eliminarUsuario(id);
+
+
     }
 }
 

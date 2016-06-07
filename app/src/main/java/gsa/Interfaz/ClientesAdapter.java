@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import gsa.gsa.Cliente;
 import gsa.gsa.R;
 import gsa.gsa.UsuariosSistema;
 
@@ -18,7 +19,7 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
         implements View.OnClickListener {
 
     private View.OnClickListener listener;
-    private List<UsuariosSistema> items;
+    private List<Cliente> items;
 
     public static class ClientesViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -34,7 +35,7 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
         }
     }
 
-    public ClientesAdapter(List<UsuariosSistema> items) {
+    public ClientesAdapter(List<Cliente> items) {
 
         this.items = items;
     }
@@ -54,9 +55,9 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
 
     @Override
     public void onBindViewHolder(ClientesViewHolder viewHolder, int i) {
-        viewHolder.nombre.setText(items.get(i).getUsuario());
-        viewHolder.apellidos.setText(items.get(i).getPassword());
-        viewHolder.email.setText(items.get(i).getAcceso());
+        viewHolder.nombre.setText(items.get(i).getNombre());
+        viewHolder.apellidos.setText(items.get(i).getApellidos());
+        viewHolder.email.setText(items.get(i).getEmail());
     }
 
     public void setOnClickListener(View.OnClickListener listener){

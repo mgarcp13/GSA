@@ -22,7 +22,9 @@ public class AgregarUsuariosSistemaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_usuarios_sistema);
-
+        et_nombre = (EditText) findViewById(R.id.et_usuario);
+        et_password = (EditText) findViewById(R.id.et_password);
+        et_acceso = (EditText) findViewById(R.id.et_acceso);
 
         if(getIntent().getExtras() == null)
             addUsuarioSistema();

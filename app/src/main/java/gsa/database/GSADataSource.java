@@ -24,14 +24,14 @@ public class GSADataSource {
 
     //Campos de la tabla AgregarUsuariosSistemaActivity
     public static class ColumnUsuariosSistema {
-        public static final String ID_USU = BaseColumns._ID;
+        public static final String ID_USU = "ID_USU";
         public static final String NOMBRE = "Nombre";
         public static final String PASSWORD = "Password";
         public static final String ACCESO = "Acceso";
     }
 
     public static class ColumnClientes {
-        public static final String ID_CLIENTE = BaseColumns._ID;
+        public static final String ID_CLIENTE = "ID_CLIENTE";
         public static final String ID_SERVICIO = "IDServicio";
         public static final String NOMBRE = "Nombre";
         public static final String APELLIDOS = "Apellidos";
@@ -46,7 +46,7 @@ public class GSADataSource {
     }
 
     public static class ColumnUsuarios {
-        public static final String ID_USUARIO = BaseColumns._ID;
+        public static final String ID_USUARIO = "ID_USUARIO";
         public static final String ID_SERVICIO = "IDServicio";
         public static final String ID_CLIENTE = "IDCliente";
         public static final String NOMBRE = "Nombre";
@@ -62,7 +62,7 @@ public class GSADataSource {
 
 
     public static class ColumnTrabajadores {
-        public static final String ID_TRABAJADOR = BaseColumns._ID;
+        public static final String ID_TRABAJADOR = "ID_TRABAJADOR";
         public static final String NOMBRE = "Nombre";
         public static final String APELLIDOS = "Apellidos";
         public static final String DNI = "DNI";

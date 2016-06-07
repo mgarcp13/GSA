@@ -23,7 +23,7 @@ import gsa.database.GSAQuerys;
 public class Clientes extends AppCompatActivity {
 
     private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
+    private ClientesAdapter adapter;
     private RecyclerView.LayoutManager lManager;
     ArrayList<String> elementos;
     private String nombre, apellidos, email;
@@ -59,7 +59,7 @@ public class Clientes extends AppCompatActivity {
 
         // Crear un nuevo adaptador
         adapter = new ClientesAdapter(items);
-
+        recycler.setAdapter(adapter);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         if (fab != null) {
             fab.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +70,7 @@ public class Clientes extends AppCompatActivity {
                 }
             });
         }
+
 
     }
 

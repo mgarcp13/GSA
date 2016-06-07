@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gsa.Interfaz.AdministracionAdapter;
+import gsa.Interfaz.MovieTouchHelperAdministracion;
 import gsa.database.GSAQuerys;
 
 public class Administracion extends AppCompatActivity {
@@ -24,7 +26,7 @@ public class Administracion extends AppCompatActivity {
     private Button add, editar, eliminar, cerrar;
     private String usuario, password, acceso;
     private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
+    private AdministracionAdapter adapter;
     private RecyclerView.LayoutManager lManager;
     private Intent intent;
     private TableRow fila;
@@ -66,7 +68,7 @@ public class Administracion extends AppCompatActivity {
         // Crear un nuevo adaptador
         adapter = new AdministracionAdapter(items);
 
-        recycler.setOnClickListener(new View.OnClickListener() {
+        adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("************", "Seleccionado el elemento en la posicion " + recycler.getChildAdapterPosition(v) + "");
@@ -76,6 +78,30 @@ public class Administracion extends AppCompatActivity {
         });
 
         recycler.setAdapter(adapter);
+        ItemTouchHelper.Callback callback = new MovieTouchHelperAdministracion(adapter, this.getApplicationContext());
+        ItemTouchHelper helper = new ItemTouchHelper(callback);
+        helper.attachToRecyclerView(recycler);
+
+        FloatingActionButton fab_add = (FloatingActionButton) findViewById(R.id.add);
+        FloatingActionButton fab_exit = (FloatingActionButton) findViewById(R.id.exit);
+
+        fab_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Administracion.this, AgregarUsuariosSistemaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fab_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Administracion.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 
