@@ -643,12 +643,13 @@ int drawable common_ic_googleplayservices 0x7f02004c
 int drawable design_fab_background 0x7f02004d
 int drawable design_snackbar_background 0x7f02004e
 int drawable ic_cliente 0x7f02004f
-int drawable ic_factura 0x7f020050
-int drawable ic_servicios 0x7f020051
-int drawable ic_trabajador 0x7f020052
-int drawable notification_template_icon_bg 0x7f020055
-int drawable tabla_celda 0x7f020053
-int drawable tabla_celda_cabecera 0x7f020054
+int drawable ic_contrato 0x7f020050
+int drawable ic_factura 0x7f020051
+int drawable ic_servicios 0x7f020052
+int drawable ic_trabajador 0x7f020053
+int drawable notification_template_icon_bg 0x7f020056
+int drawable tabla_celda 0x7f020054
+int drawable tabla_celda_cabecera 0x7f020055
 int id BtnLogin 0x7f0d00a9
 int id BtnRegistro 0x7f0d00a8
 int id LblNombre 0x7f0d00a7
@@ -767,7 +768,8 @@ int id middle 0x7f0d0032
 int id mini 0x7f0d0030
 int id multiply 0x7f0d0027
 int id nav_clientes 0x7f0d00d2
-int id nav_facturas 0x7f0d00d5
+int id nav_contratos 0x7f0d00d5
+int id nav_facturas 0x7f0d00d6
 int id nav_servicios 0x7f0d00d4
 int id nav_trabajadores 0x7f0d00d3
 int id navigation_header_container 0x7f0d00b8
@@ -1376,7 +1378,6 @@ int style Widget_Design_ScrimInsetsFrameLayout 0x7f09015d
 int style Widget_Design_Snackbar 0x7f09015e
 int style Widget_Design_TabLayout 0x7f090001
 int style Widget_Design_TextInputLayout 0x7f09015f
-int style estilo_celda 0x7f090160
 int[] styleable ActionBar { 0x7f010001, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b, 0x7f010057 }
 int styleable ActionBar_background 10
 int styleable ActionBar_backgroundSplit 12

@@ -20,7 +20,8 @@ public class GSADataSource {
     public static final String NAME_TABLE_TRABAJADORES = "Trabajadores";
     public static final String NAME_TABLE_USUARIOSSISTEMA = "UsuariosSistema";
     public static final String NAME_TABLE_SERVICIOS = "Servicios";
-    public static final String NAME_TABLE_SERVICIOSCONTRATADOS = "ServiciosContratados";
+    public static final String NAME_TABLE_CONTRATOS = "ServiciosContratados";
+    public static final String NAME_TABLE_FACTURAS = "Facturas";
     public static final String STRING_TYPE = "text";
     public static final String INT_TYPE = "integer";
 
@@ -38,12 +39,20 @@ public class GSADataSource {
         public static final String COSTE = "Coste";
     }
 
-    public static class ColumnServicioContratado {
+    public static class ColumnContratos {
         public static final String ID_CONTRATO = "ID_CONTRATO";
         public static final String ID_SERVICIO = "ID_USU";
         public static final String ID_CLIENTE = "ID_CLIENTE";
         public static final String ID_TRABAJADOR = "ID_TRABAJADOR";
         public static final String HORAS = "HORAS";
+        public static final String COSTE = "COSTE";
+    }
+
+    public static class ColumnFacturas {
+        public static final String ID_FACTURA = "ID_FACTURA";
+        public static final String ID_CLIENTE = "ID_CLIENTE";
+        public static final String IMPORTE = "IMPORTE";
+        public static final String PAGADO = "PAGADO";
     }
 
     public static class ColumnClientes {
@@ -82,7 +91,7 @@ public class GSADataSource {
         public static final String NOMBRE = "Nombre";
         public static final String APELLIDOS = "Apellidos";
         public static final String DNI = "DNI";
-        public static final String SSN = "SSN";
+        //public static final String SSN = "SSN";
         public static final String DIRECCION = "Direccion";
         public static final String POBLACION = "Poblacion";
         public static final String PROVINCIA = "Provincia";
@@ -90,13 +99,13 @@ public class GSADataSource {
         public static final String EMAIL = "Email";
         public static final String TELEFONO = "Telefono";
         public static final String NACIONALIDAD = "Nacionalidad";
-        public static final String ESTUDIOS = "Estudios";
-        public static final String ESPECIFICACION = "Especificacion";
-        public static final String OBSERVACIONES = "Observaciones";
+        //public static final String ESTUDIOS = "Estudios";
+        //public static final String ESPECIFICACION = "Especificacion";
+        //public static final String OBSERVACIONES = "Observaciones";
         public static final String VEHICULO = "Vehiculo";
-        public static final String DISPONIBLIDAD = "Disponibilidad";
-        public static final String VALORACION = "Valoracion";
-        public static final String COSTE = "Coste";
+        //public static final String DISPONIBLIDAD = "Disponibilidad";
+        //public static final String VALORACION = "Valoracion";
+        //public static final String COSTE = "Coste";
         public static final String ESPECIALIDAD = "Especialidad";
     }
 
@@ -140,14 +149,22 @@ public class GSADataSource {
                     ColumnServicios.NOMBRE +" "+STRING_TYPE+" not null, " +
                     ColumnServicios.COSTE +" "+INT_TYPE+" not null)";
 
-    //Script de Creación de la tabla AgregarUsuariosSistemaActivity
-    public static final String CREATE_SERVICIOSCONTRATADO_SCRIPT =
-            "create table "+ NAME_TABLE_SERVICIOSCONTRATADOS +"(" +
-                    ColumnServicioContratado.ID_CONTRATO +" "+INT_TYPE+" primary key autoincrement," +
-                    ColumnServicioContratado.ID_SERVICIO +" "+INT_TYPE+" not null, " +
-                    ColumnServicioContratado.ID_CLIENTE +" "+INT_TYPE+" not null, " +
-                    ColumnServicioContratado.ID_TRABAJADOR +" "+INT_TYPE+" not null, " +
-                    ColumnServicioContratado.HORAS +""+INT_TYPE+" not null)";
+    //Script de Creación de la tabla Facturas
+    public static final String CREATE_FACTURA_SCRIPT =
+            "create table "+ NAME_TABLE_FACTURAS +"(" +
+                    ColumnFacturas.ID_FACTURA +" "+INT_TYPE+" primary key autoincrement," +
+                    ColumnFacturas.ID_CLIENTE +" "+INT_TYPE+" not null, " +
+                    ColumnFacturas.IMPORTE +" "+INT_TYPE+" not null, " +
+                    ColumnFacturas.PAGADO +" "+STRING_TYPE+" not null)";
+
+    public static final String CREATE_CONTRATOS_SCRIPT =
+            "create table "+ NAME_TABLE_CONTRATOS +"(" +
+                    ColumnContratos.ID_CONTRATO +" "+INT_TYPE+" primary key autoincrement," +
+                    ColumnContratos.ID_SERVICIO +" "+INT_TYPE+" not null, " +
+                    ColumnContratos.ID_CLIENTE +" "+INT_TYPE+" not null, " +
+                    ColumnContratos.ID_TRABAJADOR +" "+INT_TYPE+" not null, " +
+                    ColumnContratos.HORAS +""+INT_TYPE+" not null, " +
+                    ColumnContratos.COSTE + "" + INT_TYPE+" not null)";
 
     //Script de Creación de la tabla Usuarios
     public static final String CREATE_USUARIOS_SCRIPT =

@@ -1,2 +1,3 @@
-CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/Interfaz/ServiciosAdapter$override.class
+CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Gestion$1$override.class
+CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Gestion$override.class
 CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class

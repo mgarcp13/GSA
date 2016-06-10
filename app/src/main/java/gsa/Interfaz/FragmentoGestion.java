@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import gsa.gsa.Administracion;
 import gsa.gsa.Clientes;
+import gsa.gsa.Contratos;
 import gsa.gsa.MainActivity;
 import gsa.gsa.Servicios;
 import gsa.gsa.Trabajadores;
@@ -33,6 +34,8 @@ public class FragmentoGestion extends AppCompatActivity{
             startActivity(new Intent(FragmentoGestion.this, Trabajadores.class));
         else if(pantalla.equals("Servicios"))
             startActivity(new Intent(FragmentoGestion.this, Servicios.class));
+        else if(pantalla.equals("Contratos"))
+            startActivity(new Intent(FragmentoGestion.this, Contratos.class));
         else if(pantalla.equals("Facturas"))
             startActivity(new Intent(FragmentoGestion.this, Clientes.class));
 

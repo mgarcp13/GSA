@@ -33,41 +33,39 @@
 
         <activity
             android:name=".Administracion"
-            android:label="@string/title_activity_administracion"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_administracion" />
         <activity
             android:name=".AgregarUsuariosSistemaActivity"
-            android:label="@string/title_activity_usuarios_sistema"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Agregar Usuarios del Sistema" />
         <activity
             android:name=".Clientes"
-            android:label="@string/title_activity_gestion"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Clientes" />
         <activity
             android:name=".AgregarClientes"
-            android:label="@string/title_activity_agregar_clientes"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Agregar Clientes" />
         <activity
             android:name=".Gestion"
-            android:label="@string/title_activity_gestion"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_gestion" />
         <activity
             android:name="gsa.Interfaz.FragmentoGestion"
             android:label="@string/title_activity_gestion"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Trabajadores"
-            android:label="@string/title_activity_gestion"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Trabajadores" />
         <activity
             android:name=".AgregarTrabajadores"
-            android:label="@string/title_activity_agregar_trabajadores"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_agregar_trabajadores" />
         <activity
             android:name=".Servicios"
-            android:label="Servicios"
-            />
-        <activity android:name=".AgregarServicios"></activity>
+            android:label="Servicios" />
+        <activity
+            android:name=".AgregarServicios"
+            android:label="Agregar Servicios" />
+        <activity
+            android:name=".Contratos"
+            android:label="Contratos" />
+        <activity android:name=".AgregarContrato"></activity>
     </application>
 
 </manifest>

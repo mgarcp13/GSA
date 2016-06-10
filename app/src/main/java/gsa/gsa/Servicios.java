@@ -88,6 +88,11 @@ public class Servicios extends AppCompatActivity {
                                 intent.putExtra("pantalla", "Trabajadores");
                                 startActivity(intent);
                                 break;
+                            case R.id.nav_contratos:
+                                intent = new Intent(Servicios.this, FragmentoGestion.class);
+                                intent.putExtra("pantalla", "Contratos");
+                                startActivity(intent);
+                                break;
                             case R.id.nav_facturas:
                                 intent = new Intent(Servicios.this, FragmentoGestion.class);
                                 intent.putExtra("pantalla", "Facturas");

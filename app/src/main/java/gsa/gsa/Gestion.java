@@ -31,6 +31,9 @@ public class Gestion extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_menu);
+        intent = new Intent(Gestion.this, Clientes.class);
+        startActivity(intent);
+
 
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
@@ -79,29 +82,4 @@ public class Gestion extends AppCompatActivity{
                 });
     }
 
-    public void accionesMenu(){
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-        switch(item.getItemId()) {
-            case android.R.id.home:
-                drawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

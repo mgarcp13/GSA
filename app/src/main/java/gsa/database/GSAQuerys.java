@@ -234,6 +234,27 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return elementos;
     }
 
+    public ArrayList<String> getContratos() {
+        database = getReadableDatabase();
+        int campos = 6;
+        ArrayList<String> elementos = new ArrayList<>();
+
+        Cursor c = database.rawQuery("SELECT ID_CONTRATO, ID_CLIENTE, ID_TRABAJADOR, ID_SERVICIO, HORAS, COSTE FROM CONTRATOS", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<campos; i++){
+                    elementos.add(c.getString(i));
+                }
+
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+
+    }
+
     public ArrayList<String> getServicios(){
         database = getReadableDatabase();
         int campos = 2;
@@ -353,4 +374,48 @@ public class GSAQuerys extends GSAReaderDbHelper{
         database.delete("SERVICIOS", "ID_SERVICIO=" + id + "", null);
     }
 
+    public String getNombreCliente(int id) {
+        database = getWritableDatabase();
+        String nombre = "";
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS FROM CLIENTES WHERE (ID_CLIENTE=" + id + ")", null);
+
+        if(c.moveToFirst()){
+            do{
+                nombre = c.getString(0) + " " + c.getString(1);
+
+            }
+            while(c.moveToNext());
+        }
+        return nombre;
+    }
+
+    public String getNombreTrabajador(int id) {
+        database = getWritableDatabase();
+        String nombre = "";
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS FROM TRABAJADORES WHERE (ID_TRABAJADOR=" + id + ")", null);
+
+        if(c.moveToFirst()){
+            do{
+                nombre = c.getString(0) + " " + c.getString(1);
+
+            }
+            while(c.moveToNext());
+        }
+        return nombre;
+    }
+
+    public String getNombreServicio(int id) {
+        database = getWritableDatabase();
+        String nombre = "";
+        Cursor c = database.rawQuery("SELECT NOMBRE FROM SERVICIOS WHERE (ID_SERVICIO=" + id + ")", null);
+
+        if(c.moveToFirst()){
+            do{
+                nombre = c.getString(0);
+
+            }
+            while(c.moveToNext());
+        }
+        return nombre;
+    }
 }

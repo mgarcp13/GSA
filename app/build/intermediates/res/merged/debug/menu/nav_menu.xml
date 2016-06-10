@@ -15,12 +15,10 @@
             android:id="@+id/nav_servicios"
             android:icon="@drawable/ic_servicios"
             android:title="@string/servicios_item" />
-
         <item
             android:id="@+id/nav_contratos"
             android:icon="@drawable/ic_contrato"
             android:title="Contratos" />
-
         <item
             android:id="@+id/nav_facturas"
             android:icon="@drawable/ic_factura"

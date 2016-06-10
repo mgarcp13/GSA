@@ -168,12 +168,12 @@
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_activity_chooser_view.xml"
     },
     {
-        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_part_time.xml"
-    },
-    {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/activity_agregar_servicios.xml",
         "source": "/home/mario/Documentos/GSA/app/src/main/res/layout/activity_agregar_servicios.xml"
+    },
+    {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",

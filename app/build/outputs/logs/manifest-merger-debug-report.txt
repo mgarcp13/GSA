@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:2:1-73:12
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:2:1-70:12
 	package
 		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:3:5-22
 		INJECTED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:8:5-72
 	android:name
 		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:8:22-69
 application
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:10:5-71:19
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:10:5-68:19
 MERGED from [com.android.support:appcompat-v7:23.2.1] /home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:23.2.1] /home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.2.1] /home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/AndroidManifest.xml:7:5-20
@@ -103,79 +103,73 @@ MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/mario/Do
 	android:name
 		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:31:13-58
 activity#gsa.gsa.Administracion
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:34:9-37:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:34:9-36:69
 	android:label
 		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:36:13-66
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:37:13-56
 	android:name
 		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:35:13-43
 activity#gsa.gsa.AgregarUsuariosSistemaActivity
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:38:9-41:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:37:9-39:60
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:40:13-68
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:39:13-57
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:39:13-59
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:38:13-59
 activity#gsa.gsa.Clientes
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:42:9-45:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:40:9-42:40
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:44:13-59
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:45:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:43:13-37
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:41:13-37
 activity#gsa.gsa.AgregarClientes
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:46:9-49:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:43:9-45:48
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:48:13-68
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:49:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:45:13-45
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:47:13-44
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:44:13-44
 activity#gsa.gsa.Gestion
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:50:9-53:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:46:9-48:62
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:52:13-59
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:53:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:48:13-59
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:51:13-36
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:47:13-36
 activity#gsa.Interfaz.FragmentoGestion
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:54:9-57:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:49:9-52:59
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:56:13-59
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:51:13-59
 	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:57:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:52:13-56
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:55:13-57
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:50:13-57
 activity#gsa.gsa.Trabajadores
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:58:9-61:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:53:9-55:44
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:60:13-59
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:61:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:55:13-41
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:59:13-41
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:54:13-41
 activity#gsa.gsa.AgregarTrabajadores
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:62:9-65:59
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:56:9-58:75
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:64:13-72
-	android:theme
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:65:13-56
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:58:13-72
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:63:13-48
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:57:13-48
 activity#gsa.gsa.Servicios
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:66:9-69:15
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:59:9-61:40
 	android:label
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:68:13-38
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:61:13-38
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:67:13-38
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:60:13-38
 activity#gsa.gsa.AgregarServicios
-ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:70:9-63
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:62:9-64:48
+	android:label
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:64:13-46
 	android:name
-		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:70:19-51
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:63:13-45
+activity#gsa.gsa.Contratos
+ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:65:9-67:40
+	android:label
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:67:13-38
+	android:name
+		ADDED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml:66:13-38
 uses-sdk
 INJECTED from /home/mario/Documentos/GSA/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.2.1] /home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/AndroidManifest.xml:21:5-23:78

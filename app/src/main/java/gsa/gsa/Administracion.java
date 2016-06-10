@@ -38,9 +38,6 @@ public class Administracion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administracion);
 
-        //Tabla tabla = new Tabla(this, (TableLayout)findViewById(R.id.tabla));
-        //tabla.agregarCabecera(R.array.cabecera_usuariossistema);
-
         GSAQuerys query = new GSAQuerys(getApplicationContext());
         ArrayList<String> elementos = query.getUsuariosSistema();
 
