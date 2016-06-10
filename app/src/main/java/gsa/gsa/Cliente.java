@@ -9,19 +9,19 @@ public class Cliente {
         return apellidos;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDni() {
+        return dni;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    private String nombre, apellidos, email;
+    private String nombre, apellidos, dni;
 
-    public Cliente(String nombre, String apellidos, String email) {
+    public Cliente(String nombre, String apellidos, String dni) {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.email = email;
+        this.dni = dni;
     }
 }

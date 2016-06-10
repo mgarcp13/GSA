@@ -1,6 +1,7 @@
 package gsa.Interfaz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import gsa.database.GSAQuerys;
+import gsa.gsa.Administracion;
 import gsa.gsa.Cliente;
 import gsa.gsa.R;
 import gsa.gsa.UsuariosSistema;
@@ -85,6 +87,9 @@ public class AdministracionAdapter extends RecyclerView.Adapter<AdministracionAd
         GSAQuerys query = new GSAQuerys(c);
         int id = query.getUsuarioSistemaID(usuario, password, Integer.parseInt(acceso));
         query.eliminarUsuario(id);
+        Intent intent = new Intent(c.getApplicationContext(), Administracion.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        c.startActivity(intent);
 
 
     }

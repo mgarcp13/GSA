@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/menu/nav_menu.xml",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/menu/nav_menu.xml"
+    }
+]

@@ -1,11 +1,8 @@
 package gsa.gsa;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +40,7 @@ public class AgregarClientes extends AppCompatActivity {
     }
 
     private void editarCliente() {
+        inicializarRecursos();
         et_nombre.setText(nombre);
         et_apellidos.setText(apellidos);
         et_dni.setText(dni);
@@ -55,6 +53,7 @@ public class AgregarClientes extends AppCompatActivity {
 
         Button editar = (Button) findViewById(R.id.btn_agregar_cliente);
         editar.setText("EDITAR");
+
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,9 +69,24 @@ public class AgregarClientes extends AppCompatActivity {
 
                 int id = query.getClienteID(dni);
                 query.editarCliente(nombre, apellidos, dni, dir, poblacion, provincia, cpostal, email, telefono, id);
+
+                Intent intent = new Intent(AgregarClientes.this, Clientes.class);
+                startActivity(intent);
             }
         });
 
+    }
+
+    private void inicializarRecursos() {
+        et_nombre = (EditText) findViewById(R.id.et_nombre_cliente);
+        et_apellidos = (EditText) findViewById(R.id.et_apellidos_cliente);
+        et_dni = (EditText) findViewById(R.id.et_dni_cliente);
+        et_dir = (EditText) findViewById(R.id.et_dir_cliente);
+        et_poblacion = (EditText) findViewById(R.id.et_poblacion_cliente);
+        et_provincia = (EditText) findViewById(R.id.et_provincia_cliente);
+        et_cpostal = (EditText) findViewById(R.id.et_cpostal_cliente);
+        et_email = (EditText) findViewById(R.id.et_email_cliente);
+        et_telefono = (EditText) findViewById(R.id.et_telefono_cliente);
     }
 
     private void addCliente() {
@@ -103,7 +117,8 @@ public class AgregarClientes extends AppCompatActivity {
 
                     query.addCliente(nombre, apellidos, dni, dir, poblacion, provincia, cpostal, email, telefono);
 
-                    Log.i("**************", "Añadido cliente " + nombre + " " + apellidos + " " + dni);
+                    Intent intent = new Intent(AgregarClientes.this, Clientes.class);
+                    startActivity(intent);
                 }
 
             });

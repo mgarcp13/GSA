@@ -23,14 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Registro"
-            android:label="@string/title_activity_registro"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -52,13 +44,30 @@
             android:label="@string/title_activity_gestion"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GestionClientes"
-            android:label="@string/title_activity_gestion_clientes"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".AgregarClientes"
             android:label="@string/title_activity_agregar_clientes"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Gestion"
+            android:label="@string/title_activity_gestion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="gsa.Interfaz.FragmentoGestion"
+            android:label="@string/title_activity_gestion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Trabajadores"
+            android:label="@string/title_activity_gestion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AgregarTrabajadores"
+            android:label="@string/title_activity_agregar_trabajadores"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Servicios"
+            android:label="Servicios"
+            />
+        <activity android:name=".AgregarServicios"></activity>
     </application>
 
 </manifest>

@@ -19,6 +19,8 @@ public class GSADataSource {
     public static final String NAME_TABLE_USUARIOS = "Usuarios";
     public static final String NAME_TABLE_TRABAJADORES = "Trabajadores";
     public static final String NAME_TABLE_USUARIOSSISTEMA = "UsuariosSistema";
+    public static final String NAME_TABLE_SERVICIOS = "Servicios";
+    public static final String NAME_TABLE_SERVICIOSCONTRATADOS = "ServiciosContratados";
     public static final String STRING_TYPE = "text";
     public static final String INT_TYPE = "integer";
 
@@ -28,6 +30,20 @@ public class GSADataSource {
         public static final String NOMBRE = "Nombre";
         public static final String PASSWORD = "Password";
         public static final String ACCESO = "Acceso";
+    }
+
+    public static class ColumnServicios {
+        public static final String ID_SERVICIO = "ID_SERVICIO";
+        public static final String NOMBRE = "Nombre";
+        public static final String COSTE = "Coste";
+    }
+
+    public static class ColumnServicioContratado {
+        public static final String ID_CONTRATO = "ID_CONTRATO";
+        public static final String ID_SERVICIO = "ID_USU";
+        public static final String ID_CLIENTE = "ID_CLIENTE";
+        public static final String ID_TRABAJADOR = "ID_TRABAJADOR";
+        public static final String HORAS = "HORAS";
     }
 
     public static class ColumnClientes {
@@ -91,22 +107,22 @@ public class GSADataSource {
                     ColumnTrabajadores.NOMBRE +" "+STRING_TYPE+" not null, " +
                     ColumnTrabajadores.APELLIDOS +" "+STRING_TYPE+" not null, " +
                     ColumnTrabajadores.DNI +" "+STRING_TYPE+" not null, "+
-                    ColumnTrabajadores.SSN +" "+STRING_TYPE+" not null," +
+                    //ColumnTrabajadores.SSN +" "+STRING_TYPE+" not null," +
                     ColumnTrabajadores.DIRECCION +" "+STRING_TYPE+" not null, "+
                     ColumnTrabajadores.POBLACION +" "+STRING_TYPE+" not null," +
                     ColumnTrabajadores.PROVINCIA +" "+STRING_TYPE+" not null, "+
-                    ColumnTrabajadores.CODPOSTAL +" "+INT_TYPE+" null, " +
+                    ColumnTrabajadores.CODPOSTAL +" "+STRING_TYPE+" null, " +
                     ColumnTrabajadores.EMAIL +" "+STRING_TYPE+" null, "+
-                    ColumnTrabajadores.TELEFONO +" "+INT_TYPE+" null"+
-                    ColumnTrabajadores.NACIONALIDAD +" "+INT_TYPE+" null," +
-                    ColumnTrabajadores.ESTUDIOS +" "+STRING_TYPE+" null, " +
-                    ColumnTrabajadores.ESPECIFICACION +" "+STRING_TYPE+" null, " +
-                    ColumnTrabajadores.OBSERVACIONES +" "+STRING_TYPE+" null, "+
+                    ColumnTrabajadores.TELEFONO +" "+STRING_TYPE+" null,"+
+                    ColumnTrabajadores.NACIONALIDAD +" "+STRING_TYPE+" null," +
+                    //ColumnTrabajadores.ESTUDIOS +" "+STRING_TYPE+" null, " +
+                    //ColumnTrabajadores.ESPECIFICACION +" "+STRING_TYPE+" null, " +
+                    //ColumnTrabajadores.OBSERVACIONES +" "+STRING_TYPE+" null, "+
                     ColumnTrabajadores.VEHICULO +" "+STRING_TYPE+" not null," +
-                    ColumnTrabajadores.DISPONIBLIDAD +" "+STRING_TYPE+" not null, "+
-                    ColumnTrabajadores.VALORACION +" "+STRING_TYPE+" null," +
-                    ColumnTrabajadores.COSTE +" "+INT_TYPE+" not null, "+
-                    ColumnTrabajadores.ESPECIALIDAD +" "+INT_TYPE+" not null) ";
+                    //ColumnTrabajadores.DISPONIBLIDAD +" "+STRING_TYPE+" not null, "+
+                    //ColumnTrabajadores.VALORACION +" "+STRING_TYPE+" null," +
+                    //ColumnTrabajadores.COSTE +" "+INT_TYPE+" not null, "+
+                    ColumnTrabajadores.ESPECIALIDAD +" "+STRING_TYPE+" not null) ";
 
 
     //Script de Creación de la tabla AgregarUsuariosSistemaActivity
@@ -115,8 +131,23 @@ public class GSADataSource {
                     ColumnUsuariosSistema.ID_USU +" "+INT_TYPE+" primary key autoincrement," +
                     ColumnUsuariosSistema.NOMBRE +" "+STRING_TYPE+" not null, " +
                     ColumnUsuariosSistema.PASSWORD +" "+STRING_TYPE+" not null, " +
-                    ColumnUsuariosSistema.ACCESO +" "+INT_TYPE+" not null) ";
+                    ColumnUsuariosSistema.ACCESO +" "+INT_TYPE+" not null)";
 
+    //Script de Creación de la tabla Servicios
+    public static final String CREATE_SERVICIOS_SCRIPT =
+            "create table "+ NAME_TABLE_SERVICIOS +"(" +
+                    ColumnServicios.ID_SERVICIO +" "+INT_TYPE+" primary key autoincrement," +
+                    ColumnServicios.NOMBRE +" "+STRING_TYPE+" not null, " +
+                    ColumnServicios.COSTE +" "+INT_TYPE+" not null)";
+
+    //Script de Creación de la tabla AgregarUsuariosSistemaActivity
+    public static final String CREATE_SERVICIOSCONTRATADO_SCRIPT =
+            "create table "+ NAME_TABLE_SERVICIOSCONTRATADOS +"(" +
+                    ColumnServicioContratado.ID_CONTRATO +" "+INT_TYPE+" primary key autoincrement," +
+                    ColumnServicioContratado.ID_SERVICIO +" "+INT_TYPE+" not null, " +
+                    ColumnServicioContratado.ID_CLIENTE +" "+INT_TYPE+" not null, " +
+                    ColumnServicioContratado.ID_TRABAJADOR +" "+INT_TYPE+" not null, " +
+                    ColumnServicioContratado.HORAS +""+INT_TYPE+" not null)";
 
     //Script de Creación de la tabla Usuarios
     public static final String CREATE_USUARIOS_SCRIPT =
@@ -157,23 +188,5 @@ public class GSADataSource {
 
     public static final String INSERT_DEFAULTSISTEMUSER2_SCRIPT = "insert into " + NAME_TABLE_USUARIOSSISTEMA +
             "(NOMBRE, PASSWORD, ACCESO) values('gestor','12345',1);";
-
-    /*public static final String INSERT_QUOTES_SCRIPT =
-            "insert into "+ NAME_TABLE_CLIENTES +" values(" +
-                    "null," +
-                    "\"El ignorante afirma, el sabio duda y reflexiona\"," +
-                    "\"Aristóteles\")," +
-                    "(null," +
-                    "\"Hay derrotas que tienen mas dignidad que la victoria\"," +
-                    "\"Jorge Luis Borges\")," +
-                    "(null," +
-                    "\"Si buscas resultados distintos, no hagas siempre lo mismo\"," +
-                    "\"Albert Einstein\")," +
-                    "(null," +
-                    "\"Donde mora la libertad, allí está mi patria\"," +
-                    "\"Benjamin Franklin\")," +
-                    "(null," +
-                    "\"Ojo por ojo y todo el mundo acabará ciego\"," +
-                    "\"Mahatma Gandhi\")";*/
 
 }

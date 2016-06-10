@@ -26,4 +26,5 @@
         completions."
     </string>
     <string name="title_activity_agregar_clientes">AgregarClientes</string>
+    <string name="title_activity_agregar_trabajadores">AgregarTrabajadores</string>
 </resources>

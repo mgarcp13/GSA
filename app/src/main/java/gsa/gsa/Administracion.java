@@ -67,17 +67,15 @@ public class Administracion extends AppCompatActivity {
 
         // Crear un nuevo adaptador
         adapter = new AdministracionAdapter(items);
+        recycler.setAdapter(adapter);
 
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("************", "Seleccionado el elemento en la posicion " + recycler.getChildAdapterPosition(v) + "");
                 editar(recycler.getChildAdapterPosition(v));
-                //Toast.makeText(v.getContext(), "Pulsado el elemento " + getArguments.getInt(INDICE_SECCION))
             }
         });
 
-        recycler.setAdapter(adapter);
         ItemTouchHelper.Callback callback = new MovieTouchHelperAdministracion(adapter, this.getApplicationContext());
         ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(recycler);
@@ -126,7 +124,7 @@ public class Administracion extends AppCompatActivity {
             Intent intent = new Intent(Administracion.this, AgregarUsuariosSistemaActivity.class);
             intent.putExtra("usuario", usuario);
             intent.putExtra("password", password);
-            intent.putExtra("acceso", acceso);
+            intent.putExtra("acceso", Integer.parseInt(acceso));
             startActivity(intent);
 
         }

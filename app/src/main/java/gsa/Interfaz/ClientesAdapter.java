@@ -1,5 +1,7 @@
 package gsa.Interfaz;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +10,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import gsa.database.GSAQuerys;
 import gsa.gsa.Cliente;
+import gsa.gsa.Clientes;
 import gsa.gsa.R;
 import gsa.gsa.UsuariosSistema;
 
@@ -22,16 +26,14 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
     private List<Cliente> items;
 
     public static class ClientesViewHolder extends RecyclerView.ViewHolder {
+
         // Campos respectivos de un item
-        public TextView nombre;
-        public TextView apellidos;
-        public TextView email;
+        public TextView nombre_apellidos, dni;
 
         public ClientesViewHolder(View v) {
             super(v);
-            nombre = (TextView) v.findViewById(R.id.nombre);
-            apellidos = (TextView) v.findViewById(R.id.apellidos);
-            email = (TextView) v.findViewById(R.id.email);
+            nombre_apellidos = (TextView) v.findViewById(R.id.nombre_apellidos);
+            dni = (TextView) v.findViewById(R.id.dni);
         }
     }
 
@@ -50,18 +52,17 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
     public ClientesViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.clientes_card, viewGroup, false);
+        v.setOnClickListener(this);
         return new ClientesViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ClientesViewHolder viewHolder, int i) {
-        viewHolder.nombre.setText(items.get(i).getNombre());
-        viewHolder.apellidos.setText(items.get(i).getApellidos());
-        viewHolder.email.setText(items.get(i).getEmail());
+        viewHolder.nombre_apellidos.setText(items.get(i).getNombre() + " " + items.get(i).getApellidos());
+        viewHolder.dni.setText(items.get(i).getDni());
     }
 
     public void setOnClickListener(View.OnClickListener listener){
-
         this.listener = listener;
     }
 
@@ -69,5 +70,16 @@ public class ClientesAdapter extends RecyclerView.Adapter<ClientesAdapter.Client
     public void onClick(View view){
         if(listener != null)
             listener.onClick(view);
+    }
+
+    public void remove(int posicion, Context c) {
+        Cliente cliente = (Cliente) this.items.get(posicion);
+        String dni = cliente.getDni().toString();
+        GSAQuerys query = new GSAQuerys(c);
+        int id = query.getClienteID(dni);
+        query.eliminarCliente(id);
+        Intent intent = new Intent(c.getApplicationContext(), Clientes.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        c.startActivity(intent);
     }
 }

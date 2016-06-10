@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="cabecera_usuariossistema">
-        <item>Usuario</item>
-        <item>Contraseña</item>
-        <item>Acceso</item>
+    <string-array name="accesos">
+        <item>Administrador</item>
+        <item>Gestor</item>
+    </string-array>
+    <string-array name="opciones">
+        <item>Si</item>
+        <item>No</item>
     </string-array>
 </resources>

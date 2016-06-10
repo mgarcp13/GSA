@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="gsa.gsa.AgregarServicios">
+    
+        <TextView
+            android:id="@+id/tv_nombre_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="Nombre"
+            android:layout_alignTop="@+id/et_nombre_servicio"
+            android:layout_alignBottom="@id/et_nombre_servicio"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp" />
+    
+        <EditText
+            android:id="@+id/et_nombre_servicio"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:layout_marginTop="5dip"
+            android:layout_alignLeft="@+id/tv_nombre_servicio"
+            android:layout_marginLeft="120dp"/>
+    
+        <TextView
+            android:id="@+id/tv_coste_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coste"
+            android:textSize="10pt"
+            android:layout_below="@id/et_nombre_servicio"
+            android:layout_alignBottom="@+id/et_coste_servicio"
+            android:layout_alignTop="@+id/et_coste_servicio"
+            android:layout_alignLeft="@+id/tv_nombre_servicio"/>
+    
+        <EditText
+            android:id="@+id/et_coste_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_servicio"
+            android:layout_below="@+id/et_nombre_servicio"
+            android:layout_alignRight="@id/et_nombre_servicio"
+            android:inputType="number"/>
+    
+        <Button
+            android:id="@+id/btn_agregar_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR"
+            android:layout_below="@+id/tv_coste_servicio"
+            android:layout_alignLeft="@+id/tv_coste_servicio"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+</ScrollView>

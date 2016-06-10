@@ -1,0 +1,251 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_nombre_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="Nombre"
+            android:layout_alignTop="@+id/et_nombre_trabajador"
+            android:layout_alignBottom="@id/et_nombre_trabajador"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/et_nombre_trabajador"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:layout_marginTop="5dip"
+            android:layout_alignLeft="@+id/tv_nombre_trabajador"
+            android:layout_marginLeft="145dp"/>
+
+        <TextView
+            android:id="@+id/tv_apellidos_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellidos"
+            android:textSize="10pt"
+            android:layout_below="@id/et_nombre_trabajador"
+            android:layout_alignBottom="@+id/et_apellidos_trabajador"
+            android:layout_alignTop="@+id/et_apellidos_trabajador"
+            android:layout_alignLeft="@+id/tv_nombre_trabajador"/>
+
+        <EditText
+            android:id="@+id/et_apellidos_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_nombre_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_dni_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:textSize="10pt"
+            android:layout_alignBottom="@+id/et_dni_trabajador"
+            android:layout_alignTop="@+id/et_dni_trabajador"
+            android:layout_alignLeft="@+id/tv_nombre_trabajador"/>
+
+        <EditText
+            android:id="@+id/et_dni_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_apellidos_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_dir_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dni_trabajador"
+            android:layout_alignLeft="@+id/tv_dni_trabajador"
+            android:layout_alignTop="@+id/et_dir_trabajador"
+            android:layout_alignBottom="@+id/et_dir_trabajador"
+            android:textSize="10pt"
+            android:text="Direccion"/>
+
+        <EditText
+            android:id="@+id/et_dir_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_dni_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_poblacion_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dir_trabajador"
+            android:layout_alignLeft="@+id/tv_dir_trabajador"
+            android:layout_alignTop="@+id/et_poblacion_trabajador"
+            android:layout_alignBottom="@+id/et_poblacion_trabajador"
+            android:textSize="10pt"
+            android:text="Poblacion"/>
+
+        <EditText
+            android:id="@+id/et_poblacion_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_dir_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_provincia_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dir_trabajador"
+            android:layout_alignLeft="@+id/tv_dir_trabajador"
+            android:layout_alignTop="@+id/et_provincia_trabajador"
+            android:layout_alignBottom="@+id/et_provincia_trabajador"
+            android:textSize="10pt"
+            android:text="Provincia"/>
+
+        <EditText
+            android:id="@+id/et_provincia_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_poblacion_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_cpostal_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_provincia_trabajador"
+            android:layout_alignLeft="@+id/tv_provincia_trabajador"
+            android:layout_alignTop="@+id/et_cpostal_trabajador"
+            android:layout_alignBottom="@+id/et_cpostal_trabajador"
+            android:textSize="10pt"
+            android:text="C. Postal"/>
+
+        <EditText
+            android:id="@+id/et_cpostal_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_provincia_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_email_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cpostal_trabajador"
+            android:layout_alignLeft="@+id/tv_dir_trabajador"
+            android:layout_alignTop="@+id/et_email_trabajador"
+            android:layout_alignBottom="@+id/et_email_trabajador"
+            android:textSize="10pt"
+            android:text="Email"/>
+
+        <EditText
+            android:id="@+id/et_email_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_cpostal_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_telefono_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_email_trabajador"
+            android:layout_alignLeft="@+id/tv_email_trabajador"
+            android:layout_alignTop="@+id/et_telefono_trabajador"
+            android:layout_alignBottom="@+id/et_telefono_trabajador"
+            android:textSize="10pt"
+            android:text="Telefono"/>
+
+        <EditText
+            android:id="@+id/et_telefono_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_email_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_nacionalidad_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_telefono_trabajador"
+            android:layout_alignLeft="@+id/tv_telefono_trabajador"
+            android:layout_alignTop="@+id/et_nacionalidad_trabajador"
+            android:layout_alignBottom="@+id/et_nacionalidad_trabajador"
+            android:textSize="10pt"
+            android:text="Nacionalidad"/>
+
+        <EditText
+            android:id="@+id/et_nacionalidad_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_telefono_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+        <TextView
+            android:id="@+id/tv_vehiculo_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nacionalidad_trabajador"
+            android:layout_alignLeft="@+id/tv_nacionalidad_trabajador"
+            android:layout_alignTop="@+id/spinner_vehiculo_trabajador"
+            android:layout_alignBottom="@+id/spinner_vehiculo_trabajador"
+            android:textSize="10pt"
+            android:text="Vehículo"/>
+
+        <Spinner
+            android:id="@+id/spinner_vehiculo_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/et_nacionalidad_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_especialidad_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vehiculo_trabajador"
+            android:layout_alignLeft="@+id/tv_nombre_trabajador"
+            android:layout_alignTop="@+id/et_especialidad_trabajador"
+            android:layout_alignBottom="@+id/et_especialidad_trabajador"
+            android:textSize="10pt"
+            android:text="Especilidad"/>
+
+        <EditText
+            android:id="@+id/et_especialidad_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_nombre_trabajador"
+            android:layout_below="@+id/spinner_vehiculo_trabajador"
+            android:layout_alignRight="@id/et_nombre_trabajador" />
+
+
+        <Button
+            android:id="@+id/btn_agregar_trabajador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR"
+            android:layout_below="@+id/tv_especialidad_trabajador"
+            android:layout_alignLeft="@+id/tv_telefono_trabajador"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+</ScrollView>

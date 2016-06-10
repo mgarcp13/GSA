@@ -37,6 +37,21 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return acceso;
     }
 
+    public void addServicio(String nombre, int coste) {
+        database = getWritableDatabase();
+        database.execSQL("INSERT INTO SERVICIOS (NOMBRE, COSTE) VALUES ('" + nombre + "', '" + coste + "');");
+    }
+
+    public void addTrabajador(String nombre, String apellidos, String dni, String dir, String poblacion,
+                              String provincia, String cpostal, String email, String telefono,
+                              String nacionalidad, String vehiculo, String especialidad) {
+        database = getWritableDatabase();
+        database.execSQL("INSERT INTO TRABAJADORES (NOMBRE, APELLIDOS, DNI, DIRECCION, POBLACION, PROVINCIA, CODPOSTAL, " +
+                "EMAIL, TELEFONO, NACIONALIDAD, VEHICULO, ESPECIALIDAD) VALUES ('" + nombre + "', '" + apellidos + "', '" +
+                dni + "', '" + dir + "', '" + poblacion + "', '" + provincia + "', '" + cpostal + "', '" + email + "', '" +
+                telefono + "', '" + nacionalidad + "', '" + vehiculo + "', '" + especialidad + "');");
+    }
+
     public void addCliente(String nombre, String apellidos, String dni, String dir, String poblacion,
                            String provincia, String cpostal, String email, String telefono) {
         database = getWritableDatabase();
@@ -94,6 +109,37 @@ public class GSAQuerys extends GSAReaderDbHelper{
                 "WHERE ID=" + id + "", null);*/
     }
 
+    public void editarTrabajador(String nombre, String apellidos, String dni, String dir, String poblacion,
+                                 String provincia, String cpostal, String email, String telefono,
+                                 String nacionalidad, String vehiculo, String especialidad, int id) {
+        database = getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("NOMBRE", nombre);
+        valores.put("APELLIDOS", apellidos);
+        valores.put("DNI", dni);
+        valores.put("DIRECCION", dir);
+        valores.put("POBLACION", poblacion);
+        valores.put("PROVINCIA", provincia);
+        valores.put("CODPOSTAL", cpostal);
+        valores.put("EMAIL", email);
+        valores.put("TELEFONO", telefono);
+        valores.put("NACIONALIDAD", nacionalidad);
+        valores.put("VEHICULO", vehiculo);
+        valores.put("ESPECIALIDAD", especialidad);
+
+        database.update("TRABAJADORES", valores, "ID_TRABAJADOR="+id+"", null);
+    }
+
+    public void editarServicio(String nombre, int coste, int id) {
+        database = getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("NOMBRE", nombre);
+        valores.put("COSTE", coste);
+
+        database.update("SERVICIOS", valores, "ID_SERVICIO=" + id + "", null);
+
+    }
+
     public void editarUsuarioSistema(String usuario, String password, int acceso, int id) {
         database = getWritableDatabase();
         ContentValues valores = new ContentValues();
@@ -137,13 +183,43 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return id;
     }
 
+    public int getTrabajadorID(String dni) {
+        database = getReadableDatabase();
+        int id = -1;
+        Cursor c = database.rawQuery("SELECT ID_TRABAJADOR FROM TRABAJADORES WHERE (DNI = '" + dni + "')" , null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                c.getInt(0);
+                id = c.getInt(0);
+            }
+            while(c.moveToNext());
+        }
+
+        return id;
+    }
+
+
+    public int getServicioID(String nombre) {
+        database = getReadableDatabase();
+        int id = -1;
+        Cursor c = database.rawQuery("SELECT ID_SERVICIO FROM SERVICIOS WHERE (NOMBRE= '" + nombre + "')", null);
+        if(c.moveToFirst()){
+            do{
+                id = c.getInt(0);
+            }
+            while(c.moveToNext());
+        }
+        return id;
+    }
+
     public ArrayList<String> getClientes(){
         database = getReadableDatabase();
         int campos = 3;
         ArrayList<String> elementos = new ArrayList<>();
-        //String[] entrada = new String[campos];
 
-        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, EMAIL FROM CLIENTES", null);
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, DNI FROM CLIENTES", null);
 
         if (c.moveToFirst()) {
             //Recorremos el cursor hasta que no haya más registros
@@ -158,9 +234,123 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return elementos;
     }
 
+    public ArrayList<String> getServicios(){
+        database = getReadableDatabase();
+        int campos = 2;
+        ArrayList<String> elementos = new ArrayList<>();
+
+        Cursor c = database.rawQuery("SELECT NOMBRE, COSTE FROM SERVICIOS", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<campos; i++){
+                    elementos.add(c.getString(i));
+                }
+
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<String> getTrabajadores(){
+        database = getReadableDatabase();
+        int campos = 5;
+        ArrayList<String> elementos = new ArrayList<>();
+
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, DNI, VEHICULO, ESPECIALIDAD FROM TRABAJADORES", null);
+
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<campos; i++){
+                    elementos.add(c.getString(i));
+                }
+
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+
+    public String[] getCliente(int id) {
+        String[] resultado = new String[9];
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, DNI, DIRECCION, POBLACION, PROVINCIA, " +
+                " CODPOSTAL, EMAIL, TELEFONO FROM CLIENTES WHERE (ID_CLIENTE=" + id + ")", null);
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<resultado.length; i++){
+                    resultado[i] = c.getString(i);
+                }
+
+            }
+            while(c.moveToNext());
+        }
+
+        return resultado;
+    }
+
+    public String[] getServicio(int id) {
+        String[] resultado = new String[2];
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE, COSTE FROM SERVICIOS " +
+                "WHERE (ID_SERVICIO=" + id + ")", null);
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<resultado.length; i++){
+                    resultado[i] = c.getString(i);
+                }
+
+            }
+            while(c.moveToNext());
+        }
+
+        return resultado;
+    }
+
+    public String[] getTrabajador(int id) {
+        String[] resultado = new String[12];
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS, DNI, DIRECCION, POBLACION, PROVINCIA, " +
+                " CODPOSTAL, EMAIL, TELEFONO, NACIONALIDAD, VEHICULO, ESPECIALIDAD FROM TRABAJADORES " +
+                "WHERE (ID_TRABAJADOR=" + id + ")", null);
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                for(int i=0; i<resultado.length; i++){
+                    resultado[i] = c.getString(i);
+                }
+
+            }
+            while(c.moveToNext());
+        }
+
+        return resultado;
+    }
+
     public void eliminarUsuario(int id) {
         database = getWritableDatabase();
-
         database.delete("USUARIOSSISTEMA","ID_USU=" + id + "", null);
     }
+
+    public void eliminarCliente(int id) {
+        database = getWritableDatabase();
+        database.delete("CLIENTES", "ID_CLIENTE=" + id + "", null);
+    }
+
+    public void eliminarTrabajador(int id) {
+        database = getWritableDatabase();
+        database.delete("TRABAJADORES", "ID_TRABAJADOR=" + id + "", null);
+    }
+
+    public void eliminarServicio(int id) {
+        database = getWritableDatabase();
+        database.delete("SERVICIOS", "ID_SERVICIO=" + id + "", null);
+    }
+
 }
