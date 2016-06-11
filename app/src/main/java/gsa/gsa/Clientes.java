@@ -91,11 +91,6 @@ public class Clientes extends AppCompatActivity {
                         Fragment fragment = null;
 
                         switch (menuItem.getItemId()) {
-                            case R.id.nav_clientes:
-                                intent = new Intent(Clientes.this, FragmentoGestion.class);
-                                intent.putExtra("pantalla", "Clientes");
-                                startActivity(intent);
-                                break;
                             case R.id.nav_trabajadores:
                                 intent = new Intent(Clientes.this, FragmentoGestion.class);
                                 intent.putExtra("pantalla", "Trabajadores");
@@ -104,6 +99,11 @@ public class Clientes extends AppCompatActivity {
                             case R.id.nav_servicios:
                                 intent = new Intent(Clientes.this, FragmentoGestion.class);
                                 intent.putExtra("pantalla", "Servicios");
+                                startActivity(intent);
+                                break;
+                            case R.id.nav_contratos:
+                                intent = new Intent(Clientes.this, FragmentoGestion.class);
+                                intent.putExtra("pantalla", "Contratos");
                                 startActivity(intent);
                                 break;
                             case R.id.nav_facturas:

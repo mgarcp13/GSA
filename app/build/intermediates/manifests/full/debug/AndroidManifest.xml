@@ -71,6 +71,7 @@
         <activity
             android:name="gsa.gsa.Contratos"
             android:label="Contratos" />
+        <activity android:name="gsa.gsa.AgregarContrato" />
     </application>
 
 </manifest>

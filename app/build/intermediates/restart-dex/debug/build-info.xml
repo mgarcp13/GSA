@@ -4,17 +4,17 @@
     api-level="22"
     density="hdpi"
     format="7"
-    timestamp="2150136999432" >
+    timestamp="27358865888344" >
 
     <task
         name="javac"
-        duration="340" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="29" />
+        duration="0" />
     <task
         name="verifier"
         duration="0" />
@@ -23,7 +23,7 @@
         location="/home/mario/Documentos/GSA/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="2150136999432" >
+    <build timestamp="27358865888344" >
         <artifact
             location="/home/mario/Documentos/GSA/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />

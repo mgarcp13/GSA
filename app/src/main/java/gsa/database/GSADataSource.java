@@ -20,7 +20,7 @@ public class GSADataSource {
     public static final String NAME_TABLE_TRABAJADORES = "Trabajadores";
     public static final String NAME_TABLE_USUARIOSSISTEMA = "UsuariosSistema";
     public static final String NAME_TABLE_SERVICIOS = "Servicios";
-    public static final String NAME_TABLE_CONTRATOS = "ServiciosContratados";
+    public static final String NAME_TABLE_CONTRATOS = "Contratos";
     public static final String NAME_TABLE_FACTURAS = "Facturas";
     public static final String STRING_TYPE = "text";
     public static final String INT_TYPE = "integer";
@@ -41,7 +41,7 @@ public class GSADataSource {
 
     public static class ColumnContratos {
         public static final String ID_CONTRATO = "ID_CONTRATO";
-        public static final String ID_SERVICIO = "ID_USU";
+        public static final String ID_SERVICIO = "ID_SERVICIO";
         public static final String ID_CLIENTE = "ID_CLIENTE";
         public static final String ID_TRABAJADOR = "ID_TRABAJADOR";
         public static final String HORAS = "HORAS";
@@ -150,7 +150,7 @@ public class GSADataSource {
                     ColumnServicios.COSTE +" "+INT_TYPE+" not null)";
 
     //Script de Creación de la tabla Facturas
-    public static final String CREATE_FACTURA_SCRIPT =
+    public static final String CREATE_FACTURAS_SCRIPT =
             "create table "+ NAME_TABLE_FACTURAS +"(" +
                     ColumnFacturas.ID_FACTURA +" "+INT_TYPE+" primary key autoincrement," +
                     ColumnFacturas.ID_CLIENTE +" "+INT_TYPE+" not null, " +
@@ -163,8 +163,8 @@ public class GSADataSource {
                     ColumnContratos.ID_SERVICIO +" "+INT_TYPE+" not null, " +
                     ColumnContratos.ID_CLIENTE +" "+INT_TYPE+" not null, " +
                     ColumnContratos.ID_TRABAJADOR +" "+INT_TYPE+" not null, " +
-                    ColumnContratos.HORAS +""+INT_TYPE+" not null, " +
-                    ColumnContratos.COSTE + "" + INT_TYPE+" not null)";
+                    ColumnContratos.HORAS +" "+INT_TYPE+" not null, " +
+                    ColumnContratos.COSTE + " " + INT_TYPE+" not null)";
 
     //Script de Creación de la tabla Usuarios
     public static final String CREATE_USUARIOS_SCRIPT =

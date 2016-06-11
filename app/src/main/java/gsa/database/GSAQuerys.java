@@ -2,6 +2,7 @@ package gsa.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -50,6 +51,13 @@ public class GSAQuerys extends GSAReaderDbHelper{
                 "EMAIL, TELEFONO, NACIONALIDAD, VEHICULO, ESPECIALIDAD) VALUES ('" + nombre + "', '" + apellidos + "', '" +
                 dni + "', '" + dir + "', '" + poblacion + "', '" + provincia + "', '" + cpostal + "', '" + email + "', '" +
                 telefono + "', '" + nacionalidad + "', '" + vehiculo + "', '" + especialidad + "');");
+    }
+
+    public void addContrato(int idCliente, int idTrabajador, int idServicio, int horas, int coste) {
+        database = getWritableDatabase();
+        database.execSQL("INSERT INTO CONTRATOS (ID_CLIENTE, ID_TRABAJADOR, ID_SERVICIO, HORAS, COSTE) " +
+                "VALUES ('" + idCliente + "', '" + idTrabajador + "', '" + idServicio + "', '" + horas + "', '" +
+                coste + "');");
     }
 
     public void addCliente(String nombre, String apellidos, String dni, String dir, String poblacion,
@@ -418,4 +426,99 @@ public class GSAQuerys extends GSAReaderDbHelper{
         }
         return nombre;
     }
+
+    public ArrayList<String> getNombreClientes() {
+        ArrayList<String> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE, APELLIDOS FROM CLIENTES ORDER BY ID_CLIENTE", null);
+
+        if(c.moveToFirst()){
+            do{
+                String nombre = c.getString(0) + " " + c.getString(1);
+                elementos.add(nombre);
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<String> getNombreTrabajadores() {
+        ArrayList<String> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE FROM TRABAJADORES ORDER BY ID_TRABAJADOR", null);
+
+        if (c.moveToFirst()) {
+            do {
+                elementos.add(c.getString(0));
+            }
+            while (c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<String> getNombreServicios() {
+        ArrayList<String> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT NOMBRE FROM SERVICIOS ORDER BY ID_SERVICIO", null);
+
+        if (c.moveToFirst()) {
+            do {
+                elementos.add(c.getString(0));
+            }
+            while (c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<Integer> getClientesIds() {
+        ArrayList<Integer> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT ID_CLIENTE FROM CLIENTES ORDER BY ID_CLIENTE", null);
+
+        if(c.moveToFirst()){
+            do{
+                elementos.add(c.getInt(0));
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<Integer> getTrabajadoresIds() {
+        ArrayList<Integer> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT ID_TRABAJADOR FROM TRABAJADORES ORDER BY ID_TRABAJADOR", null);
+
+        if(c.moveToFirst()){
+            do{
+                elementos.add(c.getInt(0));
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public ArrayList<Integer> getServiciosIds() {
+        ArrayList<Integer> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT ID_SERVICIO FROM SERVICIOS ORDER BY ID_SERVICIO", null);
+
+        if(c.moveToFirst()){
+            do{
+                elementos.add(c.getInt(0));
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
+    public int getServicioCoste(int idServicio) {
+        int coste = 0;
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT COSTE FROM SERVICIOS WHERE (ID_SERVICIO=" + idServicio + ")", null);
+        if(c.moveToNext())
+            coste = c.getInt(0);
+        return coste;
+    }
+
 }
