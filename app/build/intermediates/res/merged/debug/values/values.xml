@@ -390,6 +390,7 @@
     <string name="title_activity_administracion">Administracion</string>
     <string name="title_activity_agregar_clientes">AgregarClientes</string>
     <string name="title_activity_agregar_trabajadores">AgregarTrabajadores</string>
+    <string name="title_activity_generar_factura">GenerarFactura</string>
     <string name="title_activity_gestion">Gestion</string>
     <string name="title_activity_gestion_clientes">GestionClientes</string>
     <string name="title_activity_login">Login</string>

@@ -283,6 +283,23 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return elementos;
     }
 
+    public ArrayList<String> getFacturas() {
+        int campos = 4;
+        ArrayList<String> elementos = new ArrayList<>();
+        database = getReadableDatabase();
+
+        Cursor c = database.rawQuery("SELECT ID_FACTURA, ID_CLIENTE, IMPORTE, PAGADO FROM FACTURAS", null);
+
+        if(c.moveToFirst()){
+            do{
+                for(int i=0; i<campos; i++)
+                    elementos.add(c.getString(i));
+            }
+            while(c.moveToNext());
+        }
+        return elementos;
+    }
+
     public ArrayList<String> getTrabajadores(){
         database = getReadableDatabase();
         int campos = 5;
@@ -521,4 +538,32 @@ public class GSAQuerys extends GSAReaderDbHelper{
         return coste;
     }
 
+    public void pagarFactura(int id) {
+        database = getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("PAGADO", "SI");
+
+        database.update("FACTURAS", valores, "ID_FACTURA=" + id + "", null);
+    }
+
+    public ArrayList<Integer> getContratosCliente(int id) {
+        ArrayList<Integer> importes = new ArrayList<>();
+        database = getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT COSTE FROM CONTRATOS WHERE (ID_CLIENTE=" + id + ")", null);
+
+        if(c.moveToFirst()) {
+            do {
+                importes.add(c.getInt(0));
+            }
+
+            while (c.moveToNext());
+        }
+        return importes;
+    }
+
+    public void generarFactura(int idCliente, int importe, String pagado) {
+        database = getWritableDatabase();
+        database.execSQL("INSERT INTO FACTURAS (ID_CLIENTE, IMPORTE, PAGADO) VALUES ('" +
+                idCliente + "', '" + importe + "', '" + pagado + "');");
+    }
 }

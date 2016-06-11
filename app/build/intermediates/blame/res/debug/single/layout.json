@@ -116,6 +116,10 @@
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/res/layout/design_layout_tab_text.xml"
     },
     {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/activity_generar_factura.xml",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/layout/activity_generar_factura.xml"
+    },
+    {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
@@ -196,6 +200,10 @@
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/facturas_card.xml",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/layout/facturas_card.xml"
+    },
+    {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_action_mode_close_item_material.xml"
     },
@@ -234,6 +242,10 @@
     {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/layout_gestion.xml",
         "source": "/home/mario/Documentos/GSA/app/src/main/res/layout/layout_gestion.xml"
+    },
+    {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/content_generar_factura.xml",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/layout/content_generar_factura.xml"
     },
     {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",

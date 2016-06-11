@@ -27,4 +27,5 @@
     </string>
     <string name="title_activity_agregar_clientes">AgregarClientes</string>
     <string name="title_activity_agregar_trabajadores">AgregarTrabajadores</string>
+    <string name="title_activity_generar_factura">GenerarFactura</string>
 </resources>

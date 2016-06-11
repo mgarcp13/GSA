@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_factura_nombre_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:text="Nombre"
+            android:layout_alignTop="@+id/spinner_factura_nombre_cliente"
+            android:layout_alignBottom="@id/spinner_factura_nombre_cliente"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp" />
+
+        <Spinner
+            android:id="@+id/spinner_factura_nombre_cliente"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:layout_marginTop="5dip"
+            android:layout_alignLeft="@+id/tv_nombre_servicio"
+            android:layout_marginLeft="120dp"/>
+
+        <Button
+            android:id="@+id/btn_generar_factura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACEPTAR"
+            android:layout_below="@+id/tv_factura_nombre_cliente"
+            android:layout_alignLeft="@+id/tv_factura_nombre_cliente"/>
+
+    </RelativeLayout>
+</ScrollView>

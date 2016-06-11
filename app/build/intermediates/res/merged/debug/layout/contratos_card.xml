@@ -22,46 +22,46 @@
                 android:id="@+id/nombre_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="10dp"
-                android:text="Cliente: "/>
+                android:text="Cliente: "
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             <TextView
                 android:id="@+id/nombre_trabajador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_below="@+id/nombre_cliente"
                 android:layout_alignLeft="@+id/nombre_cliente"
-                android:text="Trabajador: "/>
+                android:layout_below="@+id/nombre_cliente"
+                android:text="Trabajador: "
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             <TextView
                 android:id="@+id/nombre_servicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_below="@+id/nombre_trabajador"
                 android:layout_alignLeft="@+id/nombre_cliente"
-                android:text="Servicio: " />
+                android:layout_below="@+id/nombre_trabajador"
+                android:text="Servicio: "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/horas_contratadas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_below="@+id/nombre_servicio"
                 android:layout_alignLeft="@+id/nombre_cliente"
-                android:text="Horas: " />
+                android:layout_below="@+id/nombre_servicio"
+                android:text="Horas: "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/coste_contrato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_below="@+id/horas_contratadas"
                 android:layout_alignLeft="@+id/nombre_cliente"
-                android:text="Importe: " />
+                android:layout_below="@+id/horas_contratadas"
+                android:text="Importe: "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </RelativeLayout>
         </ScrollView>

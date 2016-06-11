@@ -72,7 +72,16 @@
         <activity
             android:name="gsa.gsa.Contratos"
             android:label="Contratos" />
-        <activity android:name="gsa.gsa.AgregarContrato" />
+        <activity
+            android:name="gsa.gsa.AgregarContrato"
+            android:label="Agregar Contrato" />
+        <activity
+            android:name="gsa.gsa.Facturas"
+            android:label="Facturas" />
+        <activity
+            android:name="gsa.gsa.GenerarFactura"
+            android:label="@string/title_activity_generar_factura"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

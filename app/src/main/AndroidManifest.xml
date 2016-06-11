@@ -55,7 +55,7 @@
             android:label="Trabajadores" />
         <activity
             android:name=".AgregarTrabajadores"
-            android:label= "@string/title_activity_agregar_trabajadores" />
+            android:label="@string/title_activity_agregar_trabajadores" />
         <activity
             android:name=".Servicios"
             android:label="Servicios" />
@@ -65,7 +65,16 @@
         <activity
             android:name=".Contratos"
             android:label="Contratos" />
-        <activity android:name=".AgregarContrato"></activity>
+        <activity
+            android:name=".AgregarContrato"
+            android:label="Agregar Contrato" />
+        <activity
+            android:name=".Facturas"
+            android:label="Facturas" />
+        <activity
+            android:name=".GenerarFactura"
+            android:label="@string/title_activity_generar_factura"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
