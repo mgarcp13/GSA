@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import gsa.Interfaz.DialogoFactura;
 import gsa.Interfaz.FacturasAdapter;
 import gsa.Interfaz.FragmentoGestion;
 import gsa.Interfaz.MovieTouchHelperFacturas;
@@ -37,6 +39,7 @@ public class Facturas extends AppCompatActivity {
     private Intent intent;
     private DrawerLayout drawerLayout;
     private NavigationView navView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +125,9 @@ public class Facturas extends AppCompatActivity {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //editar(recycler.getChildAdapterPosition(v));
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                DialogoFactura dialogo = new DialogoFactura();
+                dialogo.show(fragmentManager, "tagConfirmacion");
             }
         });
 
