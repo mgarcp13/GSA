@@ -64,7 +64,7 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.Cont
         viewHolder.nombre_trabajador.setText("Trabajador: " + items.get(i).getTrabajador());
         viewHolder.nombre_servicio.setText("Servicio: " + items.get(i).getServicio());
         viewHolder.horas.setText("Horas: " + items.get(i).getHoras());
-        viewHolder.coste.setText("Importe: " + items.get(i).getCoste());
+        viewHolder.coste.setText("Importe: " + items.get(i).getCoste()+"€");
     }
 
     public void setOnClickListener(View.OnClickListener listener){
@@ -81,7 +81,7 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.Cont
         Contrato contrato = (Contrato) this.items.get(posicion);
         int id = contrato.getID();
         GSAQuerys query = new GSAQuerys(c);
-        //query.eliminarContrato(id);
+        query.eliminarContrato(id);
         Intent intent = new Intent(c.getApplicationContext(), Contratos.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         c.startActivity(intent);

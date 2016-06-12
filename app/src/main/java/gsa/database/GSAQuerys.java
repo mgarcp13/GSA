@@ -399,6 +399,16 @@ public class GSAQuerys extends GSAReaderDbHelper{
         database.delete("SERVICIOS", "ID_SERVICIO=" + id + "", null);
     }
 
+    public void eliminarContrato(int id) {
+        database = getWritableDatabase();
+        database.delete("CONTRATOS", "ID_CONTRATO=" + id + "", null);
+    }
+    public void eliminarFactura(int id){
+        database = getWritableDatabase();
+        database.delete("FACTURAS", "ID_FACTURA=" + id + "", null);
+    }
+
+
     public String getNombreCliente(int id) {
         database = getWritableDatabase();
         String nombre = "";
@@ -566,4 +576,5 @@ public class GSAQuerys extends GSAReaderDbHelper{
         database.execSQL("INSERT INTO FACTURAS (ID_CLIENTE, IMPORTE, PAGADO) VALUES ('" +
                 idCliente + "', '" + importe + "', '" + pagado + "');");
     }
+
 }

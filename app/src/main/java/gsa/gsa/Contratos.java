@@ -158,20 +158,6 @@ public class Contratos extends AppCompatActivity {
 
     }
 
-    /*private void editar(int posicion) {
-        Contrato contrato = (Contrato) items.get(posicion);
-        GSAQuerys query = new GSAQuerys(getApplicationContext());
-        id = contrato.getID();
-        String campos[] = query.getContrato(id);
-        nombre = campos[0];
-        coste = Integer.parseInt(campos[1]);
-
-        Intent intent = new Intent(Servicios.this, AgregarServicios.class);
-        intent.putExtra("nombre", nombre);
-        intent.putExtra("coste", coste);
-        startActivity(intent);
-    }*/
-
     private String getNombreCliente(int id) {
         GSAQuerys query = new GSAQuerys(getApplicationContext());
         String nombre = query.getNombreCliente(id);

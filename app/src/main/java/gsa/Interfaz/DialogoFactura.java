@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 
 import gsa.database.GSAQuerys;
 import gsa.gsa.Facturas;
@@ -14,27 +15,33 @@ import gsa.gsa.Facturas;
  */
 public class DialogoFactura extends DialogFragment {
 
+    private String confirmacion;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity());
 
-        builder.setMessage("¿Desea pagar la factura?")
+        builder.setMessage("¿Confirma la acción seleccionada?")
                 .setTitle("Confirmacion")
-                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Facturas facturas = new Facturas();
-                        GSAQuerys query = new GSAQuerys(facturas.getApplicationContext());
+                        Log.i("Dialogos", "Confirmacion Aceptada.");
                         dialog.cancel();
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        Log.i("Dialogos", "Confirmacion Cancelada.");
                         dialog.cancel();
                     }
                 });
 
         return builder.create();
+    }
+
+    public String getConfirmacion() {
+        return confirmacion;
     }
 }

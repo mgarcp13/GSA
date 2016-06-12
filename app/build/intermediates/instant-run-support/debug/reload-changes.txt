@@ -1,5 +1,2 @@
-CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Facturas$override.class
-CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Facturas$5$override.class
-CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Facturas$4$override.class
-CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/gsa/Facturas$3$override.class
+CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/gsa/Interfaz/ContratosAdapter$override.class
 CHANGED,/home/mario/Documentos/GSA/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class

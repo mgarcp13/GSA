@@ -6,12 +6,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -52,10 +54,8 @@ public class Facturas extends AppCompatActivity {
         for (int i = 0; i < elementos.size(); i++) {
             if (i % 4 == 0)
                 id_factura = Integer.parseInt(elementos.get(i));
-            else if (i % 4 == 1){
+            else if (i % 4 == 1)
                 cliente = getNombreCliente(Integer.parseInt(elementos.get(i)));
-            }
-
             else if (i % 4 == 2)
                 importe = (Integer.parseInt(elementos.get(i)));
             else if (i % 4 == 3){
@@ -125,9 +125,7 @@ public class Facturas extends AppCompatActivity {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                DialogoFactura dialogo = new DialogoFactura();
-                dialogo.show(fragmentManager, "tagConfirmacion");
+                pagarFactura(recycler.getChildAdapterPosition(v));
             }
         });
 
@@ -137,17 +135,6 @@ public class Facturas extends AppCompatActivity {
 
         FloatingActionButton fab_add = (FloatingActionButton) findViewById(R.id.fab_add_reciclador);
         FloatingActionButton fab_exit = (FloatingActionButton) findViewById(R.id.fab_exit_reciclador);
-        FloatingActionButton fab_pagar_factura = (FloatingActionButton) findViewById(R.id.fab_pagar_factura);
-
-        if (fab_pagar_factura != null) {
-            fab_pagar_factura.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("*******", "sd");
-                    pagarFactura(recycler.getChildAdapterPosition(view));
-                }
-            });
-        }
 
         if (fab_add != null) {
             fab_add.setOnClickListener(new View.OnClickListener() {
@@ -173,11 +160,10 @@ public class Facturas extends AppCompatActivity {
 
     private void pagarFactura(int posicion) {
         Factura factura = (Factura) items.get(posicion);
-        Log.i("*****", "Pagar la factura en la posicion " + posicion);
         id_factura = factura.getId();
         GSAQuerys query = new GSAQuerys(getApplicationContext());
         query.pagarFactura(id_factura);
-
+        startActivity(new Intent(Facturas.this, Facturas.class));
     }
 
     private void buscarFacturas() {
@@ -191,5 +177,6 @@ public class Facturas extends AppCompatActivity {
         cliente = query.getNombreCliente(id);
         return cliente;
     }
+
 
 }

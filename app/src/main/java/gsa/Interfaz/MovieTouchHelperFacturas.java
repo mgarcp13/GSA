@@ -14,7 +14,7 @@ public class MovieTouchHelperFacturas extends ItemTouchHelper.SimpleCallback {
     private FacturasAdapter mMovieAdapter;
     private Context c;
 
-    public MovieTouchHelperFacturas(FacturasAdapter movieAdapter, Context applicationContext) {
+    public MovieTouchHelperFacturas(FacturasAdapter movieAdapter, Context c) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.c = c;
         this.mMovieAdapter = movieAdapter;

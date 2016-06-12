@@ -12,7 +12,7 @@ public class MovieTouchHelperContratos extends ItemTouchHelper.SimpleCallback {
     private ContratosAdapter mMovieAdapter;
     private Context c;
 
-    public MovieTouchHelperContratos(ContratosAdapter movieAdapter, Context applicationContext) {
+    public MovieTouchHelperContratos(ContratosAdapter movieAdapter, Context c) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.c = c;
         this.mMovieAdapter = movieAdapter;

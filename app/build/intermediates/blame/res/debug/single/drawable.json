@@ -60,6 +60,10 @@
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_switch_thumb_material.xml"
     },
     {
+        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/drawable/ic_servicio.png",
+        "source": "/home/mario/Documentos/GSA/app/src/main/res/drawable/ic_servicio.png"
+    },
+    {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
@@ -118,10 +122,6 @@
     {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/home/mario/Documentos/GSA/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/drawable/ic_servicios.png",
-        "source": "/home/mario/Documentos/GSA/app/src/main/res/drawable/ic_servicios.png"
     },
     {
         "merged": "/home/mario/Documentos/GSA/app/build/intermediates/res/merged/debug/drawable/ic_cliente.png",

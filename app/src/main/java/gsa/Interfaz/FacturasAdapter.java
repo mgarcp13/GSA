@@ -44,7 +44,6 @@ public class FacturasAdapter extends RecyclerView.Adapter<FacturasAdapter.Factur
 
     @Override
     public int getItemCount() {
-
         return items.size();
     }
 
@@ -74,10 +73,10 @@ public class FacturasAdapter extends RecyclerView.Adapter<FacturasAdapter.Factur
     }
 
     public void remove(int posicion, Context c) {
-        Factura factura = (Factura) this.items.get(posicion);
-        //int id = factura.getID();
+        Factura factura = this.items.get(posicion);
+        int id = factura.getId();
         GSAQuerys query = new GSAQuerys(c);
-        //query.eliminarFactura(id);
+        query.eliminarFactura(id);
         Intent intent = new Intent(c.getApplicationContext(), Facturas.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         c.startActivity(intent);

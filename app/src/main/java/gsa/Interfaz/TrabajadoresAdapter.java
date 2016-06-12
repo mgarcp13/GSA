@@ -80,6 +80,7 @@ public class TrabajadoresAdapter extends RecyclerView.Adapter<TrabajadoresAdapte
         String dni = trabajador.getDni().toString();
         GSAQuerys query = new GSAQuerys(c);
         int id = query.getTrabajadorID(dni);
+        query.eliminarTrabajador(id);
         Intent intent = new Intent(c.getApplicationContext(), Trabajadores.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         c.startActivity(intent);
